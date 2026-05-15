@@ -8,7 +8,7 @@ fi
 MTA_STS_FILE="/app/.well-known/mta-sts.txt"
 
 mkdir -p /app/.well-known && \
-    echo "version: ${MTA_STS_VERSION:-STSv1}" >> $MTA_STS_FILE && \
+    echo "version: ${MTA_STS_VERSION:-STSv1}" > $MTA_STS_FILE && \
     echo "mode: ${MTA_STS_MODE:-enforce}" >> $MTA_STS_FILE
 
 for mx in $(echo ${MTA_STS_MX} | tr ',' ' '); do
